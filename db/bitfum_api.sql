@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2017 at 01:09 PM
+-- Generation Time: Nov 26, 2017 at 01:19 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -37,10 +37,10 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2017_11_26_084111_create_products_table', 1),
-(4, '2017_11_26_084424_create_reviews_table', 1);
+(9, '2014_10_12_000000_create_users_table', 1),
+(10, '2014_10_12_100000_create_password_resets_table', 1),
+(11, '2017_11_26_084111_create_products_table', 1),
+(12, '2017_11_26_084424_create_reviews_table', 1);
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,7 @@ CREATE TABLE `products` (
 CREATE TABLE `reviews` (
   `id` int(10) UNSIGNED NOT NULL,
   `product_id` int(10) UNSIGNED NOT NULL,
-  `reviews` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `reviews` text COLLATE utf8mb4_unicode_ci,
   `star` int(11) NOT NULL,
   `customer` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -146,7 +146,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `products`
 --
