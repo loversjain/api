@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             $table->increments('id');
             $table->integer('product_id')->unsigned()->index();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->text('reviews');
+            $table->text('reviews')->nullable();
             $table->integer('star');
             $table->string('customer');
             $table->timestamps();
